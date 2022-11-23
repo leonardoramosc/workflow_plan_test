@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const { HOST_PORT } = require('./keys')
 
 const app = express()
 app.use(cors())
@@ -18,6 +19,6 @@ app.post('/plan', (req, res) => {
   res.send({ message: 'plan created successfully' })
 })
 
-app.listen(3000, () => {
-  console.log('app listening on port 3000')
+app.listen(HOST_PORT, () => {
+  console.log(`app listening on port ${HOST_PORT}`)
 })
